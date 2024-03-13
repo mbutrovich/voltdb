@@ -122,7 +122,7 @@ function threaded-async-benchmark() {
         --servers=$SERVERS \
         --contestants=12 \
         --maxvotes=2 \
-        --threads=4
+        --threads=8
 }
 
 # Multi-threaded synchronous benchmark sample
