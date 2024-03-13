@@ -110,6 +110,21 @@ function async-benchmark() {
         --maxvotes=2
 }
 
+# latencyreport: default is OFF
+# ratelimit: must be a reasonable value if lantencyreport is ON
+function threaded-async-benchmark() {
+    jars-ifneeded
+    java $add_open \
+    -classpath voter-client.jar:$CLIENTCLASSPATH voter.ThreadedAsyncBenchmark \
+        --displayinterval=5 \
+        --warmup=0 \
+        --duration=30 \
+        --servers=$SERVERS \
+        --contestants=12 \
+        --maxvotes=2 \
+        --threads=4
+}
+
 # Multi-threaded synchronous benchmark sample
 # Use this target for argument help
 function sync-benchmark-help() {
