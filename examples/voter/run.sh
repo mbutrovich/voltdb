@@ -103,11 +103,13 @@ function async-benchmark() {
     java $add_open \
 	-classpath voter-client.jar:$CLIENTCLASSPATH voter.AsyncBenchmark \
         --displayinterval=5 \
-        --warmup=5 \
-        --duration=120 \
+        --warmup=0 \
+        --duration=30 \
         --servers=$SERVERS \
-        --contestants=6 \
-        --maxvotes=2
+        --contestants=12 \
+        --maxvotes=2 \
+        --latencyreport=true \
+        --ratelimit=100000
 }
 
 # latencyreport: default is OFF
