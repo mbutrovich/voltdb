@@ -286,13 +286,13 @@ public class SyncBenchmark {
                 badVoteCountVotes.get(), failedVotes.get());
 
         // 2. Voting results
-        VoltTable result = client.callProcedure("Results").getResults()[0];
+        // VoltTable result = client.callProcedure("Results").getResults()[0];
 
-        System.out.println("Contestant Name\t\tVotes Received");
-        while(result.advanceRow()) {
-            System.out.printf("%s\t\t%,14d\n", result.getString(0), result.getLong(2));
-        }
-        System.out.printf("\nThe Winner is: %s\n\n", result.fetchRow(0).getString(0));
+        // System.out.println("Contestant Name\t\tVotes Received");
+        // while(result.advanceRow()) {
+        //     System.out.printf("%s\t\t%,14d\n", result.getString(0), result.getLong(2));
+        // }
+        // System.out.printf("\nThe Winner is: %s\n\n", result.fetchRow(0).getString(0));
 
         // 3. Performance statistics
         System.out.print(HORIZONTAL_RULE);
